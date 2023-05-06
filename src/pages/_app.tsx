@@ -4,11 +4,15 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
+import { NavBar } from "~/components/NavBar";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <ClerkProvider {...pageProps} >
+      <div className="dark:text-white text-black">
+      <NavBar />
       <Component {...pageProps} />
+      </div>
     </ClerkProvider>
   );
 };
